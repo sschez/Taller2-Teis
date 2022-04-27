@@ -5,22 +5,29 @@ namespace App\Http\Controllers;
 class HomeController extends Controller
 
 {
-    public static $quotes = array("Ella y yo, dos locos viviendo una aventura castigada por Dios - William Omar Landron",
-
-    "Mami, tu solo escribe - Stiven Mesa Londono",
+    public static $pokeneas = [
+    [1, "Elkin","1.77","ASALTAR","X","Y"],
+    [2, "Brayan","1.75","DISPARAR","Z","W"],
+    [3, "Styven","1.74","IMPACTRUENO","S","A"],
+    [4, "Alexander","1.73","D","G","F"],
+    [5, "Yizuz","1.79","L","K","H"],
+    [6, "Yeison","1.72","T","B","U"],
+    [7, "Giovanni","1.80","J","H","G"],
+    ];
     
-    "Amor, dile que no, Te maltrate tu corazon, Quiero, baby, tu amor, Que me ames sin temor - David Luciano Acosta",
-    
-    "Tu me robaste el corazon como un criminal - Natalia Alexandra Gutierrez Batista",
-    
-    "Tu encuentro no es algo casual, para mi es un poco ilogico. He vivido un acto historico - Felix Gerardo Ortiz Torres",
-    
-    "Mami, yo quisiera quedarme, Pero la calle me llama - Llandel Veguilla Malave",
-    
-    "Llego a la disco vestido de Jordan - Bryan Castro Sosa",
-    
-    );
     public function index()
+        {
+
+        $totalNeas = (count(HomeController::$pokeneas));
+
+        $randomNumber = (rand(0,($totalNeas-1)));
+
+        $randomPokenea = HomeController::$quotes[$randomNumber];
+
+        return response()->json(['quote' => $randomQuote, 'server_ip' => gethostbyname(gethostname())]);
+        }
+
+    public function profile()
         {
 
         $totalQuotes = (count(HomeController::$quotes));
@@ -31,5 +38,4 @@ class HomeController extends Controller
 
         return response()->json(['quote' => $randomQuote, 'server_ip' => gethostbyname(gethostname())]);
         }
-
  }

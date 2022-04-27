@@ -22,3 +22,9 @@ $router->get('/index', [
     'as' => 'index', 'uses' => 'HomeController@index'
     
     ]);
+
+$router->get('/profile', [
+
+    'as' => 'index', 'uses' => 'HomeController@profile'
+        
+    ]);
