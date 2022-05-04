@@ -41,8 +41,10 @@ class HomeController extends Controller
         $Frase = $randomPokenea[5];
         $server_ip = gethostbyname(gethostname());
 
-        echo "<img src='$Imagen'>"."\n";
-        echo "Frase: ".$Frase."\n";
-        echo "IP del contenedor: ".$server_ip."\n";
+        
+        echo "<center>"."<img src='$Imagen'>"."<br>";
+        echo "Frase: ".$Frase."<br>";
+        echo "IP del contenedor: ".$server_ip;
+       
         }
  }
